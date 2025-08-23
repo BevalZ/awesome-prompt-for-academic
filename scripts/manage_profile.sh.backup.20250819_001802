@@ -258,7 +258,7 @@ edit_display_settings() {
         
         case $setting_choice in
             1)
-                echo -n "$(get_string "SHOW_WELCOME_MESSAGE" "$interface_lang"): "
+                echo -n "Show welcome message on startup? (y/n): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^[Yy]$ ]]; then
                     write_profile_value "SHOW_WELCOME" "true"
@@ -270,7 +270,7 @@ edit_display_settings() {
                 sleep 1
                 ;;
             2)
-                echo -n "$(get_string "ENABLE_COLORED_OUTPUT" "$interface_lang"): "
+                echo -n "Enable colored output? (y/n): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^[Yy]$ ]]; then
                     write_profile_value "SHOW_COLORS" "true"
@@ -282,7 +282,7 @@ edit_display_settings() {
                 sleep 1
                 ;;
             3)
-                echo -n "$(get_string "AUTO_SAVE_SETTINGS" "$interface_lang"): "
+                echo -n "Auto-save settings? (y/n): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^[Yy]$ ]]; then
                     write_profile_value "AUTO_SAVE" "true"
@@ -336,7 +336,7 @@ edit_interface_settings() {
                 show_interface_language_menu
                 ;;
             2)
-                echo -n "$(get_string "ENTER_DEFAULT_LANGUAGE" "$interface_lang"): "
+                echo -n "Enter default language (EN, ZH, JP, DE, FR, ES, IT, PT, RU, AR, KO, HI): "
                 read -r value </dev/tty
                 if [[ -n "$value" ]]; then
                     write_profile_value "DEFAULT_LANGUAGE" "$value"
@@ -346,7 +346,7 @@ edit_interface_settings() {
                 sleep 1
                 ;;
             3)
-                echo -n "$(get_string "ENTER_DEFAULT_CATEGORY" "$interface_lang"): "
+                echo -n "Enter default category: "
                 read -r value </dev/tty
                 if [[ -n "$value" ]]; then
                     write_profile_value "DEFAULT_CATEGORY" "$value"
@@ -356,7 +356,7 @@ edit_interface_settings() {
                 sleep 1
                 ;;
             4)
-                echo -n "$(get_string "SELECT_INTERFACE_STYLE" "$interface_lang"): "
+                echo -n "Select interface style (modern/classic/minimal): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^(modern|classic|minimal)$ ]]; then
                     write_profile_value "INTERFACE_STYLE" "$value"
@@ -444,12 +444,12 @@ edit_search_settings() {
         print_color "$GREEN" "  3. 🔙 Back to Edit Menu"
         echo ""
         
-        echo -n "$(get_string "SELECT_SETTING_TO_EDIT" "$interface_lang"): "
+        echo -n "Select setting to edit (1-3): "
         read -r setting_choice </dev/tty
         
         case $setting_choice in
             1)
-                echo -n "$(get_string "ENTER_SEARCH_HISTORY_SIZE" "$interface_lang"): "
+                echo -n "Enter search history size (1-50): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^[0-9]+$ ]] && [[ $value -ge 1 ]] && [[ $value -le 50 ]]; then
                     write_profile_value "SEARCH_HISTORY_SIZE" "$value"
@@ -461,7 +461,7 @@ edit_search_settings() {
                 sleep 1
                 ;;
             2)
-                echo -n "$(get_string "SELECT_DEFAULT_SEARCH_MODE" "$interface_lang"): "
+                echo -n "Select default search mode (interactive/quick/category): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^(interactive|quick|category)$ ]]; then
                     write_profile_value "DEFAULT_SEARCH_MODE" "$value"
@@ -501,12 +501,12 @@ edit_tool_settings() {
         print_color "$GREEN" "  4. 🔙 Back to Edit Menu"
         echo ""
         
-        echo -n "$(get_string "SELECT_TOOL_SETTING_TO_EDIT" "$interface_lang"): "
+        echo -n "Select setting to edit (1-4): "
         read -r setting_choice </dev/tty
         
         case $setting_choice in
             1)
-                echo -n "$(get_string "ENABLE_STRICT_PROMPT_VALIDATION" "$interface_lang"): "
+                echo -n "Enable strict prompt validation? (y/n): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^[Yy]$ ]]; then
                     write_profile_value "PROMPT_VALIDATION_STRICT" "true"
@@ -520,7 +520,7 @@ edit_tool_settings() {
                 sleep 1
                 ;;
             2)
-                echo -n "$(get_string "ENABLE_AUTO_TRANSLATION" "$interface_lang"): "
+                echo -n "Enable auto-translation? (y/n): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^[Yy]$ ]]; then
                     write_profile_value "AUTO_TRANSLATE" "true"
@@ -534,7 +534,7 @@ edit_tool_settings() {
                 sleep 1
                 ;;
             3)
-                echo -n "$(get_string "CREATE_BACKUP_BEFORE_EDITING" "$interface_lang"): "
+                echo -n "Create backup before editing? (y/n): "
                 read -r value </dev/tty
                 if [[ "$value" =~ ^[Yy]$ ]]; then
                     write_profile_value "BACKUP_BEFORE_EDIT" "true"
@@ -565,7 +565,7 @@ reset_to_defaults() {
     echo ""
     print_color "$YELLOW" "⚠️  This will reset ALL your custom settings to defaults!"
     echo ""
-    echo -n "$(get_string "ARE_YOU_SURE" "$interface_lang"): "
+    echo -n "Are you sure? (y/N): "
     read -r confirm </dev/tty
     
     if [[ "$confirm" =~ ^[Yy]$ ]]; then

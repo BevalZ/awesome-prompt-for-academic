@@ -860,7 +860,7 @@ interactive_search() {
     echo ""
     
     while true; do
-        echo -n "$(get_string "ENTER_SEARCH_KEYWORDS" "$interface_lang"): "
+        echo -n "Enter search keywords: "
         read -r keywords </dev/tty
         
         if [[ "$keywords" == "quit" ]] || [[ "$keywords" == "q" ]]; then

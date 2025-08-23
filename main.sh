@@ -60,14 +60,62 @@ print_header() {
     local subtitle=$(get_string "MAIN_SUBTITLE" "$interface_lang")
     local subtitle2=$(get_string "MAIN_SUBTITLE2" "$interface_lang")
     
-    print_color "$BOLD$BLUE" "╔══════════════════════════════════════════════════════════════╗"
-    print_color "$BOLD$BLUE" "║                                                              ║"
-    print_color "$BOLD$BLUE" "║           $title            ║"
-    print_color "$BOLD$BLUE" "║                                                              ║"
-    print_color "$BOLD$BLUE" "║        $subtitle          ║"
-    print_color "$BOLD$BLUE" "║                     $subtitle2                           ║"
-    print_color "$BOLD$BLUE" "║                                                              ║"
-    print_color "$BOLD$BLUE" "╚══════════════════════════════════════════════════════════════╝"
+    # Calculate dynamic width based on content
+    local title_len=${#title}
+    local subtitle_len=${#subtitle}
+    local subtitle2_len=${#subtitle2}
+    
+    # Find the longest line and add padding
+    local max_len=$((title_len > subtitle_len ? title_len : subtitle_len))
+    max_len=$((max_len > subtitle2_len ? max_len : subtitle2_len))
+    max_len=$((max_len + 8))  # Add padding
+    
+    # Ensure minimum width
+    if [[ $max_len -lt 60 ]]; then
+        max_len=60
+    fi
+    
+    # Create border line
+    local border_line=""
+    for ((i=0; i<max_len; i++)); do
+        border_line="${border_line}═"
+    done
+    
+    # Create empty line
+    local empty_line=""
+    for ((i=0; i<max_len; i++)); do
+        empty_line="${empty_line} "
+    done
+    
+    # Center the text
+    local title_padding=$(( (max_len - title_len) / 2 ))
+    local subtitle_padding=$(( (max_len - subtitle_len) / 2 ))
+    local subtitle2_padding=$(( (max_len - subtitle2_len) / 2 ))
+    
+    local title_spaces=""
+    local subtitle_spaces=""
+    local subtitle2_spaces=""
+    
+    for ((i=0; i<title_padding; i++)); do
+        title_spaces="${title_spaces} "
+    done
+    
+    for ((i=0; i<subtitle_padding; i++)); do
+        subtitle_spaces="${subtitle_spaces} "
+    done
+    
+    for ((i=0; i<subtitle2_padding; i++)); do
+        subtitle2_spaces="${subtitle2_spaces} "
+    done
+    
+    print_color "$BOLD$BLUE" "╔${border_line}╗"
+    print_color "$BOLD$BLUE" "║${empty_line}║"
+    print_color "$BOLD$BLUE" "║${title_spaces}${title}${title_spaces}║"
+    print_color "$BOLD$BLUE" "║${empty_line}║"
+    print_color "$BOLD$BLUE" "║${subtitle_spaces}${subtitle}${subtitle_spaces}║"
+    print_color "$BOLD$BLUE" "║${subtitle2_spaces}${subtitle2}${subtitle2_spaces}║"
+    print_color "$BOLD$BLUE" "║${empty_line}║"
+    print_color "$BOLD$BLUE" "╚${border_line}╝"
     echo ""
 }
 

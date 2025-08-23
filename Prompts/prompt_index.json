@@ -81,11 +81,597 @@
                     "position": 13,
                     "en_title": "Methodology Appropriateness Analysis",
                     "description": "Analyze the appropriateness of research methodologies"
+                },
+                {
+                    "id": "general_014",
+                    "position": 14,
+                    "en_title": "Interdisciplinary Research Topic Generator",
+                    "description": "Generate novel research topics at the intersection of diverse fields"
+                },
+                {
+                    "id": "general_015",
+                    "position": 15,
+                    "en_title": "Emerging Trend Analyzer",
+                    "description": "Identify emerging research trends from academic literature patterns"
+                },
+                {
+                    "id": "general_016",
+                    "position": 16,
+                    "en_title": "Personalized Research Direction Advisor",
+                    "description": "Suggest new research directions building on existing expertise"
+                },
+                {
+                    "id": "general_017",
+                    "position": 17,
+                    "en_title": "Impact-Driven Question Formulator",
+                    "description": "Identify and prioritize impactful research questions in any field"
+                },
+                {
+                    "id": "general_018",
+                    "position": 18,
+                    "en_title": "Funding Agency Proposal Developer",
+                    "description": "Design research proposals that appeal to funding agencies"
+                },
+                {
+                    "id": "general_019",
+                    "position": 19,
+                    "en_title": "Methodological Transfer Specialist",
+                    "description": "Adapt successful methodologies across different research domains"
+                },
+                {
+                    "id": "general_020",
+                    "position": 20,
+                    "en_title": "Ethics-Focused Research Designer",
+                    "description": "Identify ethical dilemmas and design research to investigate them"
+                },
+                {
+                    "id": "general_021",
+                    "position": 21,
+                    "en_title": "Industry-Academia Bridge Builder",
+                    "description": "Translate industrial innovations into academic research opportunities"
+                },
+                {
+                    "id": "general_022",
+                    "position": 22,
+                    "en_title": "Conceptual Gap Identifier",
+                    "description": "Map knowledge structures and identify underexplored theoretical connections"
+                },
+                {
+                    "id": "general_023",
+                    "position": 23,
+                    "en_title": "Historical Perspective Innovator",
+                    "description": "Connect historical insights with contemporary research challenges"
+                },
+                {
+                    "id": "general_024",
+                    "position": 24,
+                    "en_title": "Literature Gap Synthesizer",
+                    "description": "Synthesize research gaps from multiple studies for comprehensive understanding"
+                },
+                {
+                    "id": "general_025",
+                    "position": 25,
+                    "en_title": "PICO Question Framework Specialist",
+                    "description": "Transform broad research interests into precise, testable PICO questions"
+                },
+                {
+                    "id": "general_026",
+                    "position": 26,
+                    "en_title": "Research Question Quality Assessor",
+                    "description": "Critique research questions for clarity, focus, and feasibility"
+                },
+                {
+                    "id": "general_027",
+                    "position": 27,
+                    "en_title": "Hypothesis Development Expert",
+                    "description": "Formulate testable hypotheses from research questions"
+                },
+                {
+                    "id": "general_028",
+                    "position": 28,
+                    "en_title": "Variable Identification Specialist",
+                    "description": "Identify and operationalize independent, dependent, and confounding variables"
+                },
+                {
+                    "id": "general_029",
+                    "position": 29,
+                    "en_title": "Methodological Comparison Analyst",
+                    "description": "Compare qualitative and quantitative methodological approaches"
+                },
+                {
+                    "id": "general_030",
+                    "position": 30,
+                    "en_title": "Mixed-Methods Design Expert",
+                    "description": "Design integrated mixed-methods research studies"
+                },
+                {
+                    "id": "general_031",
+                    "position": 31,
+                    "en_title": "Sampling Strategy Designer",
+                    "description": "Design appropriate sampling strategies for research studies"
+                },
+                {
+                    "id": "general_032",
+                    "position": 32,
+                    "en_title": "Ethics Review Board Simulator",
+                    "description": "Identify potential ethical concerns and suggest mitigation strategies"
+                },
+                {
+                    "id": "general_033",
+                    "position": 33,
+                    "en_title": "Data Management Planning Expert",
+                    "description": "Draft comprehensive data management plans following FAIR principles"
+                },
+                {
+                    "id": "general_034",
+                    "position": 34,
+                    "en_title": "Grant Significance Statement Writer",
+                    "description": "Craft compelling significance statements for grant proposals"
+                },
+                {
+                    "id": "general_035",
+                    "position": 35,
+                    "en_title": "Project Timeline Developer",
+                    "description": "Create realistic project timelines with milestones and deliverables"
+                },
+                {
+                    "id": "general_036",
+                    "position": 36,
+                    "en_title": "Budget Justification Specialist",
+                    "description": "Draft detailed budget justifications for research grants"
+                },
+                {
+                    "id": "general_037",
+                    "position": 37,
+                    "en_title": "Proposal Abstract Writer",
+                    "description": "Create compelling grant proposal abstracts addressing key criteria"
+                },
+                {
+                    "id": "general_038",
+                    "position": 38,
+                    "en_title": "Grant Review Simulator",
+                    "description": "Evaluate research proposals using standard review criteria"
+                },
+                {
+                    "id": "general_039",
+                    "position": 39,
+                    "en_title": "Advanced Literature Search Strategist",
+                    "description": "Generate comprehensive keywords and search strategies for academic literature"
+                },
+                {
+                    "id": "general_040",
+                    "position": 40,
+                    "en_title": "Boolean Search String Developer",
+                    "description": "Develop sophisticated boolean search strings for academic databases"
+                },
+                {
+                    "id": "general_041",
+                    "position": 41,
+                    "en_title": "Academic Journal Selection Advisor",
+                    "description": "Identify and select appropriate journals for literature review research"
+                },
+                {
+                    "id": "general_042",
+                    "position": 42,
+                    "en_title": "Key Scholar and Publication Finder",
+                    "description": "Identify influential scholars and seminal publications in research areas"
+                },
+                {
+                    "id": "general_043",
+                    "position": 43,
+                    "en_title": "PRISMA Systematic Review Designer",
+                    "description": "Design PRISMA-compliant systematic review methodologies"
+                },
+                {
+                    "id": "general_044",
+                    "position": 44,
+                    "en_title": "Citation Network Navigator",
+                    "description": "Navigate and analyze citation networks for comprehensive literature coverage"
+                },
+                {
+                    "id": "general_045",
+                    "position": 45,
+                    "en_title": "Literature Screening Specialist",
+                    "description": "Develop systematic screening processes for literature review inclusion/exclusion"
+                },
+                {
+                    "id": "general_046",
+                    "position": 46,
+                    "en_title": "Thematic Literature Organizer",
+                    "description": "Organize literature into coherent thematic clusters and categories"
+                },
+                {
+                    "id": "general_047",
+                    "position": 47,
+                    "en_title": "Evidence Table Designer",
+                    "description": "Design comprehensive evidence tables for systematic literature organization"
+                },
+                {
+                    "id": "general_048",
+                    "position": 48,
+                    "en_title": "Literature Annotation Expert",
+                    "description": "Create focused and systematic annotations for academic literature"
+                },
+                {
+                    "id": "general_049",
+                    "position": 49,
+                    "en_title": "Academic Article Summarizer",
+                    "description": "Provide structured and comprehensive summaries of academic articles"
+                },
+                {
+                    "id": "general_050",
+                    "position": 50,
+                    "en_title": "Critical Literature Reviewer",
+                    "description": "Conduct critical analysis and peer review of academic literature"
+                },
+                {
+                    "id": "general_051",
+                    "position": 51,
+                    "en_title": "Theoretical Framework Comparator",
+                    "description": "Compare and contrast different theoretical frameworks across literature"
+                },
+                {
+                    "id": "general_052",
+                    "position": 52,
+                    "en_title": "Academic Debate Analyzer",
+                    "description": "Analyze scholarly disagreements and debates within academic literature"
+                },
+                {
+                    "id": "general_053",
+                    "position": 53,
+                    "en_title": "Methodology Critic",
+                    "description": "Provide critical analysis of research methodologies in literature"
+                },
+                {
+                    "id": "general_054",
+                    "position": 54,
+                    "en_title": "Multi-Source Literature Synthesizer",
+                    "description": "Synthesize findings and insights from multiple literature sources"
+                },
+                {
+                    "id": "general_055",
+                    "position": 55,
+                    "en_title": "Research Field Historiographer",
+                    "description": "Trace historical development and evolution of research fields"
+                },
+                {
+                    "id": "general_056",
+                    "position": 56,
+                    "en_title": "Methodology Literature Organizer",
+                    "description": "Organize and categorize literature based on methodological approaches"
+                },
+                {
+                    "id": "general_057",
+                    "position": 57,
+                    "en_title": "Theoretical Perspective Analyzer",
+                    "description": "Analyze literature through different theoretical lenses and perspectives"
+                },
+                {
+                    "id": "general_058",
+                    "position": 58,
+                    "en_title": "Research Gap Articulator",
+                    "description": "Identify and articulate research gaps from comprehensive literature analysis"
+                },
+                {
+                    "id": "general_059",
+                    "position": 59,
+                    "en_title": "Argument Strength Analyzer",
+                    "description": "Analyze and strengthen arguments in academic writing through evidence evaluation"
+                },
+                {
+                    "id": "general_060",
+                    "position": 60,
+                    "en_title": "Text Coherence Enhancer",
+                    "description": "Improve logical flow and coherence throughout academic texts"
+                },
+                {
+                    "id": "general_061",
+                    "position": 61,
+                    "en_title": "Logical Fallacy Detector",
+                    "description": "Identify and address logical fallacies in academic arguments"
+                },
+                {
+                    "id": "general_062",
+                    "position": 62,
+                    "en_title": "Hidden Assumption Analyzer",
+                    "description": "Uncover and examine hidden assumptions underlying academic arguments"
+                },
+                {
+                    "id": "general_063",
+                    "position": 63,
+                    "en_title": "Counterargument Strategist",
+                    "description": "Develop effective counterarguments and anticipate opposing viewpoints"
+                },
+                {
+                    "id": "general_064",
+                    "position": 64,
+                    "en_title": "Sentence Clarity Improver",
+                    "description": "Enhance sentence clarity and readability in academic writing"
+                },
+                {
+                    "id": "general_065",
+                    "position": 65,
+                    "en_title": "Audience-Targeted Writing Adapter",
+                    "description": "Adapt academic writing style and language for specific audiences"
+                },
+                {
+                    "id": "general_066",
+                    "position": 66,
+                    "en_title": "Conciseness Enhancement Trainer",
+                    "description": "Train writers to express ideas more concisely without losing meaning"
+                },
+                {
+                    "id": "general_067",
+                    "position": 67,
+                    "en_title": "Active Voice Transformer",
+                    "description": "Transform passive voice constructions to active voice for stronger writing"
+                },
+                {
+                    "id": "general_068",
+                    "position": 68,
+                    "en_title": "Complex Concept Simplifier",
+                    "description": "Simplify complex academic concepts while maintaining accuracy"
+                },
+                {
+                    "id": "general_069",
+                    "position": 69,
+                    "en_title": "Academic Tone Refiner",
+                    "description": "Refine and maintain appropriate academic tone throughout texts"
+                },
+                {
+                    "id": "general_070",
+                    "position": 70,
+                    "en_title": "Voice and Style Transformer",
+                    "description": "Transform writing voice and style to match academic conventions"
+                },
+                {
+                    "id": "general_071",
+                    "position": 71,
+                    "en_title": "Sentence Structure Variator",
+                    "description": "Enhance sentence variety and structure for engaging academic prose"
+                },
+                {
+                    "id": "general_072",
+                    "position": 72,
+                    "en_title": "Hedging Language Optimizer",
+                    "description": "Optimize hedging language for appropriate academic caution and precision"
+                },
+                {
+                    "id": "general_073",
+                    "position": 73,
+                    "en_title": "Comprehensive Proofreader",
+                    "description": "Provide comprehensive proofreading for grammar, spelling, and formatting"
+                },
+                {
+                    "id": "general_074",
+                    "position": 74,
+                    "en_title": "Style Guide Compliance Checker",
+                    "description": "Ensure compliance with specific academic style guides and formatting requirements"
+                },
+                {
+                    "id": "general_075",
+                    "position": 75,
+                    "en_title": "Terminology Consistency Checker",
+                    "description": "Check and maintain consistent terminology usage throughout academic texts"
+                },
+                {
+                    "id": "general_076",
+                    "position": 76,
+                    "en_title": "Final Line Editor",
+                    "description": "Perform final line editing for publication-ready academic manuscripts"
+                },
+                {
+                    "id": "general_077",
+                    "position": 77,
+                    "en_title": "Qualitative Coding Framework Developer",
+                    "description": "Develop systematic frameworks for qualitative data coding and analysis"
+                },
+                {
+                    "id": "general_078",
+                    "position": 78,
+                    "en_title": "Analytical Memo Writer",
+                    "description": "Create structured analytical memos to document qualitative analysis insights"
+                },
+                {
+                    "id": "general_079",
+                    "position": 79,
+                    "en_title": "Thematic Analysis Structure Refiner",
+                    "description": "Refine and organize thematic structures in qualitative research analysis"
+                },
+                {
+                    "id": "general_080",
+                    "position": 80,
+                    "en_title": "Qualitative Results Narrator",
+                    "description": "Generate compelling narratives for qualitative research results and findings"
+                },
+                {
+                    "id": "general_081",
+                    "position": 81,
+                    "en_title": "Conference Presentation Designer",
+                    "description": "Design engaging and structured conference presentations for academic research"
+                },
+                {
+                    "id": "general_082",
+                    "position": 82,
+                    "en_title": "Presentation Introduction Writer",
+                    "description": "Create compelling introduction scripts for academic presentations"
+                },
+                {
+                    "id": "general_083",
+                    "position": 83,
+                    "en_title": "Research Poster Layout Designer",
+                    "description": "Design effective layout structures for academic research posters"
+                },
+                {
+                    "id": "general_084",
+                    "position": 84,
+                    "en_title": "Academic Q&A Strategist",
+                    "description": "Develop strategies for handling questions during academic presentations"
+                },
+                {
+                    "id": "general_085",
+                    "position": 85,
+                    "en_title": "Three Minute Thesis Coach",
+                    "description": "Coach researchers in creating effective three minute thesis presentations"
+                },
+                {
+                    "id": "general_086",
+                    "position": 86,
+                    "en_title": "Peer Review Response Strategist",
+                    "description": "Develop strategic approaches to responding to peer reviewer comments"
+                },
+                {
+                    "id": "general_087",
+                    "position": 87,
+                    "en_title": "Reviewer Response Table Creator",
+                    "description": "Create systematic tables for organizing responses to reviewer feedback"
+                },
+                {
+                    "id": "general_088",
+                    "position": 88,
+                    "en_title": "Targeted Revision Specialist",
+                    "description": "Specialize in making targeted revisions based on specific feedback"
+                },
+                {
+                    "id": "general_089",
+                    "position": 89,
+                    "en_title": "Editor Correspondence Specialist",
+                    "description": "Draft professional correspondence letters to journal editors"
+                },
+                {
+                    "id": "general_090",
+                    "position": 90,
+                    "en_title": "Academic-to-Public Translator",
+                    "description": "Translate complex academic research for general public audiences"
+                },
+                {
+                    "id": "general_091",
+                    "position": 91,
+                    "en_title": "Research Press Release Writer",
+                    "description": "Write compelling press releases for academic research findings"
+                },
+                {
+                    "id": "general_092",
+                    "position": 92,
+                    "en_title": "Academic Social Media Strategist",
+                    "description": "Develop social media content strategies for academic research dissemination"
+                },
+                {
+                    "id": "general_093",
+                    "position": 93,
+                    "en_title": "Educational Content Simplifier",
+                    "description": "Simplify academic content for educational purposes while maintaining accuracy"
+                },
+                {
+                    "id": "general_094",
+                    "position": 94,
+                    "en_title": "Research-to-Policy Communicator",
+                    "description": "Communicate academic research findings for policy-making contexts"
+                },
+                {
+                    "id": "general_095",
+                    "position": 95,
+                    "en_title": "Comprehensive Manuscript Reviewer",
+                    "description": "Provide comprehensive reviews of academic manuscripts across all sections"
+                },
+                {
+                    "id": "general_096",
+                    "position": 96,
+                    "en_title": "Introduction Section Analyzer",
+                    "description": "Analyze and critique introduction sections of academic papers"
+                },
+                {
+                    "id": "general_097",
+                    "position": 97,
+                    "en_title": "Research Contribution Evaluator",
+                    "description": "Evaluate and assess the significance of research contributions"
+                },
+                {
+                    "id": "general_098",
+                    "position": 98,
+                    "en_title": "Academic Writing Quality Reviewer",
+                    "description": "Review and assess overall quality of academic writing"
+                },
+                {
+                    "id": "general_099",
+                    "position": 99,
+                    "en_title": "Grant Proposal Evaluator",
+                    "description": "Evaluate grant proposals using standard review criteria and best practices"
+                },
+                {
+                    "id": "general_100",
+                    "position": 100,
+                    "en_title": "Research Project Feasibility Analyzer",
+                    "description": "Analyze feasibility of research projects including timeline and resource requirements"
+                },
+                {
+                    "id": "general_101",
+                    "position": 101,
+                    "en_title": "Methodology Expert Reviewer",
+                    "description": "Provide expert review of research methodologies and approaches"
+                },
+                {
+                    "id": "general_102",
+                    "position": 102,
+                    "en_title": "Ethics Review Board Simulator",
+                    "description": "Simulate ethics review board evaluation processes for research proposals"
                 }
             ]
         },
         "computer-science": {
             "prompts": []
+        },
+        "mathematics-statistics": {
+            "prompts": [
+                {
+                    "id": "math_001",
+                    "position": 1,
+                    "en_title": "Statistical Test Selection Guide",
+                    "description": "Recommend appropriate statistical tests for research questions and study designs"
+                },
+                {
+                    "id": "math_002",
+                    "position": 2,
+                    "en_title": "Statistical Output Interpreter",
+                    "description": "Interpret complex statistical outputs for practical significance"
+                },
+                {
+                    "id": "math_003",
+                    "position": 3,
+                    "en_title": "Statistical Code Generator",
+                    "description": "Generate clean, documented code for statistical analyses"
+                },
+                {
+                    "id": "math_004",
+                    "position": 4,
+                    "en_title": "Statistical Assumption Checker",
+                    "description": "Explain and test assumptions for statistical procedures"
+                },
+                {
+                    "id": "math_005",
+                    "position": 5,
+                    "en_title": "Data Visualization Strategy Advisor",
+                    "description": "Select appropriate chart types for data visualization"
+                },
+                {
+                    "id": "math_006",
+                    "position": 6,
+                    "en_title": "Figure Communication Enhancer",
+                    "description": "Create compelling titles and captions for visualizations"
+                },
+                {
+                    "id": "math_007",
+                    "position": 7,
+                    "en_title": "Visualization Code Developer",
+                    "description": "Generate publication-quality visualization code"
+                },
+                {
+                    "id": "math_008",
+                    "position": 8,
+                    "en_title": "Visualization Expert Critic",
+                    "description": "Provide expert critique of data visualizations"
+                }
+            ]
         },
         "medical-sciences": {
             "prompts": [

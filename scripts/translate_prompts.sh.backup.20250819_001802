@@ -54,20 +54,20 @@ print_color() {
 }
 
 show_usage() {
-    print_color "$BLUE" "$(get_string "TRANSLATION_HELPER_TITLE" "$interface_lang")"
+    print_color "$BLUE" "🌍 Translation Helper for Academic Prompts"
     echo ""
     echo "Usage: $0 [OPTIONS]"
     echo ""
     echo "Options:"
     echo "  -h, --help              Show this help message"
-    echo "  -s, --status            $(get_string "SHOW_TRANSLATION_STATUS" "$interface_lang")"
-    echo "  -v, --verify            $(get_string "VERIFY_FILE_CONSISTENCY" "$interface_lang")"
-    echo "  -c, --count             $(get_string "COUNT_PROMPTS_IN_LANGUAGE" "$interface_lang")"
+    echo "  -s, --status            Show translation status across all languages"
+    echo "  -v, --verify            Verify file consistency across languages"
+    echo "  -c, --count             Count prompts in each language"
     echo ""
 }
 
 show_status() {
-    print_color "$BLUE" "$(get_string "TRANSLATION_STATUS_TITLE" "$interface_lang")"
+    print_color "$BLUE" "📊 Translation Status Across All Languages"
     echo ""
     
     for i in "${!LANGUAGES[@]}"; do
@@ -86,20 +86,20 @@ show_status() {
 }
 
 verify_consistency() {
-    print_color "$BLUE" "$(get_string "VERIFY_CONSISTENCY_TITLE" "$interface_lang")"
+    print_color "$BLUE" "🔍 Verifying File Consistency Across Languages"
     echo ""
     
     local categories=("business-management" "computer-science" "engineering" "general" "humanities" "mathematics-statistics" "medical-sciences" "natural-sciences" "social-sciences")
     
     for category in "${categories[@]}"; do
-        print_color "$YELLOW" "$(get_string "CHECKING_CATEGORY" "$interface_lang") $category.md:"
+        print_color "$YELLOW" "Checking $category.md:"
         
         for lang in "${LANGUAGES[@]}"; do
             local file_path="$PROMPTS_DIR/$lang/$category.md"
             if [[ -f "$file_path" ]]; then
-                echo "  $(get_string "FILE_FOUND" "$interface_lang") $lang"
+                echo "  ✅ $lang"
             else
-                echo "  $(get_string "FILE_MISSING" "$interface_lang") $lang (missing)"
+                echo "  ❌ $lang (missing)"
             fi
         done
         echo ""
