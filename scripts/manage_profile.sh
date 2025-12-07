@@ -41,7 +41,7 @@ print_header() {
     clear
     print_color "$BOLD$BLUE" "╔══════════════════════════════════════════════════════════════╗"
     print_color "$BOLD$BLUE" "║                                                              ║"
-    print_color "$BOLD$BLUE" "║           ⚙️  USER PROFILE MANAGEMENT ⚙️                    ║"
+    print_color "$BOLD$BLUE" "║           ⚙️  USER PROFILE MANAGEMENT ⚙️                     ║"
     print_color "$BOLD$BLUE" "║                                                              ║"
     print_color "$BOLD$BLUE" "║        Customize Your Academic Prompts Experience            ║"
     print_color "$BOLD$BLUE" "║                                                              ║"

@@ -1057,9 +1057,9 @@ print_header() {
     clear
     print_color "$BOLD$BLUE" "╔══════════════════════════════════════════════════════════════╗"
     print_color "$BOLD$BLUE" "║                                                              ║"
-    print_color "$BOLD$BLUE" "║           🎓 AWESOME ACADEMIC PROMPTS TOOLKIT 🎓            ║"
+    print_color "$BOLD$BLUE" "║           🎓 AWESOME ACADEMIC PROMPTS TOOLKIT 🎓               ║"
     print_color "$BOLD$BLUE" "║                                                              ║"
-    print_color "$BOLD$BLUE" "║        Your Complete Academic AI Prompt Management          ║"
+    print_color "$BOLD$BLUE" "║        Your Complete Academic AI Prompt Management           ║"
     print_color "$BOLD$BLUE" "║                     Command Center                           ║"
     print_color "$BOLD$BLUE" "║                                                              ║"
     print_color "$BOLD$BLUE" "╚══════════════════════════════════════════════════════════════╝"
