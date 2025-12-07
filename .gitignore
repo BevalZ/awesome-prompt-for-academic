@@ -38,6 +38,10 @@ coverage/
 tmp/
 temp/
 
+# Backup files (from translations and profile updates)
+*.bak
+*.backup
+
 # OS generated files
 Thumbs.db
 ehthumbs.db

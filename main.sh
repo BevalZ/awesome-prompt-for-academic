@@ -578,6 +578,122 @@ show_smart_navigation_guide() {
     fi
 }
 
+# Function to show DeepLX translation menu
+show_deeplx_menu() {
+    while true; do
+        print_header
+        local interface_lang=$(read_profile_value "INTERFACE_LANGUAGE" "EN")
+        local deeplx_enabled=$(read_profile_value "DEEPLX_API_ENABLED" "false")
+        
+        print_color "$BOLD$CYAN" "$(get_string "DEEPLX_TRANSLATION_TITLE" "$interface_lang")"
+        echo ""
+        
+        if [[ "$deeplx_enabled" != "true" ]]; then
+            print_color "$YELLOW" "⚠️  DeepLX API is not configured"
+            echo ""
+        fi
+        
+        print_color "$GREEN" "  1. $(get_string "DEEPLX_ENABLE_API" "$interface_lang")"
+        print_color "$YELLOW" "     └─ Configure or disable DeepLX API"
+        echo ""
+        
+        if [[ "$deeplx_enabled" == "true" ]]; then
+            print_color "$GREEN" "  2. $(get_string "DEEPLX_TRANSLATE_PROMPT" "$interface_lang")"
+            print_color "$YELLOW" "     └─ Translate a single prompt"
+            echo ""
+            print_color "$GREEN" "  3. $(get_string "DEEPLX_TRANSLATE_FILE" "$interface_lang")"
+            print_color "$YELLOW" "     └─ Translate a full category file"
+            echo ""
+            print_color "$GREEN" "  4. $(get_string "DEEPLX_BATCH_TRANSLATE" "$interface_lang")"
+            print_color "$YELLOW" "     └─ Batch translate multiple files"
+            echo ""
+            print_color "$GREEN" "  5. $(get_string "BACK_TO_MENU" "$interface_lang")"
+        else
+            print_color "$GREEN" "  2. $(get_string "BACK_TO_MENU" "$interface_lang")"
+        fi
+        echo ""
+        print_color "$MAGENTA" "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo ""
+        
+        local max_option=2
+        if [[ "$deeplx_enabled" == "true" ]]; then
+            max_option=5
+            echo -n "$(get_string "SELECT_OPTION" "$interface_lang") (1-5) or type 'q' to return: "
+        else
+            echo -n "$(get_string "SELECT_OPTION" "$interface_lang") (1-2) or type 'q' to return: "
+        fi
+        read -r choice </dev/tty
+        
+        case $choice in
+            1)
+                print_header
+                "$SCRIPT_DIR/scripts/translate_prompts.sh" --configure-api
+                echo ""
+                print_color "$BLUE" "Press Enter to continue..."
+                read -r input </dev/tty
+                ;;
+            2)
+                if [[ "$deeplx_enabled" != "true" ]]; then
+                    break
+                fi
+                print_header
+                print_color "$BOLD$CYAN" "$(get_string "DEEPLX_TRANSLATE_PROMPT" "$interface_lang")"
+                echo ""
+                print_color "$CYAN" "Interactive prompt translation is not yet implemented."
+                print_color "$CYAN" "Please use the command line:"
+                echo "  ./scripts/translate_prompts.sh --translate-prompt \\"
+                echo "    --source-lang EN --target-lang ZH --category general \\"
+                echo "    --prompt-title \"Your Prompt Title\""
+                echo ""
+                print_color "$BLUE" "Press Enter to continue..."
+                read -r input </dev/tty
+                ;;
+            3)
+                if [[ "$deeplx_enabled" != "true" ]]; then
+                    break
+                fi
+                print_header
+                print_color "$BOLD$CYAN" "$(get_string "DEEPLX_TRANSLATE_FILE" "$interface_lang")"
+                echo ""
+                print_color "$CYAN" "Interactive file translation is not yet implemented."
+                print_color "$CYAN" "Please use the command line:"
+                echo "  ./scripts/translate_prompts.sh --translate-file \\"
+                echo "    --source-lang EN --target-lang ZH --category general"
+                echo ""
+                print_color "$BLUE" "Press Enter to continue..."
+                read -r input </dev/tty
+                ;;
+            4)
+                if [[ "$deeplx_enabled" != "true" ]]; then
+                    break
+                fi
+                print_header
+                print_color "$BOLD$CYAN" "$(get_string "DEEPLX_BATCH_TRANSLATE" "$interface_lang")"
+                echo ""
+                print_color "$CYAN" "Interactive batch translation is not yet implemented."
+                print_color "$CYAN" "Please use the command line:"
+                echo "  ./scripts/translate_prompts.sh --batch-translate \\"
+                echo "    --source-lang EN --target-lang ZH,FR,DE"
+                echo ""
+                print_color "$BLUE" "Press Enter to continue..."
+                read -r input </dev/tty
+                ;;
+            5)
+                if [[ "$deeplx_enabled" == "true" ]]; then
+                    break
+                fi
+                ;;
+            q|Q|"")
+                break
+                ;;
+            *)
+                print_color "$RED" "Invalid choice. Please select a valid option or type 'q'."
+                sleep 1
+                ;;
+        esac
+    done
+}
+
 # Function to show translation menu
 show_translation_menu() {
     while true; do
@@ -598,12 +714,15 @@ show_translation_menu() {
         print_color "$GREEN" "  4. $(get_string "LANGUAGE_OVERVIEW" "$interface_lang")"
         print_color "$YELLOW" "     └─ Show supported languages and statistics"
         echo ""
-        print_color "$GREEN" "  5. $(get_string "BACK_TO_MENU" "$interface_lang")"
+        print_color "$GREEN" "  5. $(get_string "DEEPLX_TRANSLATION_TITLE" "$interface_lang")"
+        print_color "$YELLOW" "     └─ DeepLX API translation tools (configure API first)"
+        echo ""
+        print_color "$GREEN" "  6. $(get_string "BACK_TO_MENU" "$interface_lang")"
         echo ""
         print_color "$MAGENTA" "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
         echo ""
         
-        echo -n "$(get_string "SELECT_OPTION" "$interface_lang") (1-5) or type 'q' to return: "
+        echo -n "$(get_string "SELECT_OPTION" "$interface_lang") (1-6) or type 'q' to return: "
         read -r choice </dev/tty
         
         case $choice in
@@ -638,39 +757,42 @@ show_translation_menu() {
                 fi
                 ;;
             4)
-                print_header
-                print_color "$BOLD$CYAN" "🌐 Supported Languages Overview"
-                echo ""
-                print_color "$BLUE" "The repository supports 12 major academic languages:"
-                echo ""
-                print_color "$GREEN" "🇺🇸 EN - English      🇯🇵 JP - Japanese    🇨🇳 ZH - Chinese"
-                print_color "$GREEN" "  DE - German       🇫🇷 FR - French      🇪🇸 ES - Spanish"
-                print_color "$GREEN" "🇮🇹 IT - Italian      🇵🇹 PT - Portuguese  🇷🇺 RU - Russian"
-                print_color "$GREEN" "🇸🇦 AR - Arabic       🇰🇷 KO - Korean      🇮🇳 HI - Hindi"
-                echo ""
-                print_color "$YELLOW" "Each language contains 9 category files:"
-                print_color "$CYAN" "• business-management.md    • computer-science.md"
-                print_color "$CYAN" "• engineering.md           • general.md"
-                print_color "$CYAN" "• humanities.md            • mathematics-statistics.md"
-                print_color "$CYAN" "• medical-sciences.md      • natural-sciences.md"
-                print_color "$CYAN" "• social-sciences.md"
-                echo ""
-                print_color "$BOLD$GREEN" "Total: 108 category files across 12 languages"
-                echo ""
-                print_color "$BLUE" "Press Enter or type 'q' to return to translation menu..."
-                read -r input </dev/tty
-                if [[ "$input" == "q" ]] || [[ "$input" == "Q" ]]; then
-                    break
-                fi
-                ;;
-            5|q|Q|"")
-                break
-                ;;
+               print_header
+               print_color "$BOLD$CYAN" "🌐 Supported Languages Overview"
+               echo ""
+               print_color "$BLUE" "The repository supports 12 major academic languages:"
+               echo ""
+               print_color "$GREEN" "🇺🇸 EN - English      🇯🇵 JP - Japanese    🇨🇳 ZH - Chinese"
+               print_color "$GREEN" "  DE - German       🇫🇷 FR - French      🇪🇸 ES - Spanish"
+               print_color "$GREEN" "🇮🇹 IT - Italian      🇵🇹 PT - Portuguese  🇷🇺 RU - Russian"
+               print_color "$GREEN" "🇸🇦 AR - Arabic       🇰🇷 KO - Korean      🇮🇳 HI - Hindi"
+               echo ""
+               print_color "$YELLOW" "Each language contains 9 category files:"
+               print_color "$CYAN" "• business-management.md    • computer-science.md"
+               print_color "$CYAN" "• engineering.md           • general.md"
+               print_color "$CYAN" "• humanities.md            • mathematics-statistics.md"
+               print_color "$CYAN" "• medical-sciences.md      • natural-sciences.md"
+               print_color "$CYAN" "• social-sciences.md"
+               echo ""
+               print_color "$BOLD$GREEN" "Total: 108 category files across 12 languages"
+               echo ""
+               print_color "$BLUE" "Press Enter or type 'q' to return to translation menu..."
+               read -r input </dev/tty
+               if [[ "$input" == "q" ]] || [[ "$input" == "Q" ]]; then
+                   break
+               fi
+               ;;
+            5)
+               show_deeplx_menu
+               ;;
+            6|q|Q|"")
+               break
+               ;;
             *)
-                print_color "$RED" "Invalid choice. Please select 1-5 or type 'q' to return."
-                sleep 1
-                ;;
-        esac
+               print_color "$RED" "Invalid choice. Please select 1-6 or type 'q' to return."
+               sleep 1
+               ;;
+            esac
     done
 }
 
