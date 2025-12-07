@@ -23,6 +23,17 @@ DEFAULT_PROFILE="$SCRIPT_DIR/Profiles/default_profile.conf"
 # Load language strings
 source "$SCRIPT_DIR/Profiles/language_strings.sh" 2>/dev/null || true
 
+# Function to calculate display width accounting for emojis
+# Emojis display as 2 characters but count as 1 in bash
+get_display_width() {
+    local text="$1"
+    # Count emoji characters (simplified regex for common emojis)
+    local emoji_count=$(echo "$text" | grep -o '[🎓⚙️🔍📊💾🌐📝🏷️📋📚🚪🔙]' | wc -l || true)
+    local char_count=${#text}
+    # Each emoji adds 1 extra character to display width
+    echo $((char_count + emoji_count))
+}
+
 # Function to print colored output
 print_color() {
     local color=$1
@@ -41,7 +52,7 @@ print_header() {
     clear
     print_color "$BOLD$BLUE" "╔══════════════════════════════════════════════════════════════╗"
     print_color "$BOLD$BLUE" "║                                                              ║"
-    print_color "$BOLD$BLUE" "║           ⚙️  USER PROFILE MANAGEMENT ⚙️                     ║"
+    print_color "$BOLD$BLUE" "║           ⚙️  USER PROFILE MANAGEMENT ⚙️                       ║"
     print_color "$BOLD$BLUE" "║                                                              ║"
     print_color "$BOLD$BLUE" "║        Customize Your Academic Prompts Experience            ║"
     print_color "$BOLD$BLUE" "║                                                              ║"

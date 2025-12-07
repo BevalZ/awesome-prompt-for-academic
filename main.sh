@@ -22,6 +22,17 @@ PROFILE_FILE="$SCRIPT_DIR/Profiles/user_profile.conf"
 # Load language strings
 source "$SCRIPT_DIR/Profiles/language_strings.sh" 2>/dev/null || true
 
+# Function to calculate display width accounting for emojis
+# Emojis display as 2 characters but count as 1 in bash
+get_display_width() {
+    local text="$1"
+    # Count emoji characters (simplified regex for common emojis)
+    local emoji_count=$(echo "$text" | grep -o '[🎓⚙️🔍📊💾🌐📝🏷️📋📚🚪🔙]' | wc -l || true)
+    local char_count=${#text}
+    # Each emoji adds 1 extra character to display width
+    echo $((char_count + emoji_count))
+}
+
 # Function to print colored output
 print_color() {
     local color=$1
@@ -60,10 +71,10 @@ print_header() {
     local subtitle=$(get_string "MAIN_SUBTITLE" "$interface_lang")
     local subtitle2=$(get_string "MAIN_SUBTITLE2" "$interface_lang")
     
-    # Calculate dynamic width based on content
-    local title_len=${#title}
-    local subtitle_len=${#subtitle}
-    local subtitle2_len=${#subtitle2}
+    # Calculate dynamic width based on content using display width
+    local title_len=$(get_display_width "$title")
+    local subtitle_len=$(get_display_width "$subtitle")
+    local subtitle2_len=$(get_display_width "$subtitle2")
     
     # Find the longest line and add padding
     local max_len=$((title_len > subtitle_len ? title_len : subtitle_len))

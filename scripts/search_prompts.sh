@@ -45,6 +45,17 @@ refresh_prompts_directory() {
 # Load language strings
 source "$SCRIPT_DIR/Profiles/language_strings.sh" 2>/dev/null || true
 
+# Function to calculate display width accounting for emojis
+# Emojis display as 2 characters but count as 1 in bash
+get_display_width() {
+    local text="$1"
+    # Count emoji characters (simplified regex for common emojis)
+    local emoji_count=$(echo "$text" | grep -o '[🎓⚙️🔍📊💾🌐📝🏷️📋📚🚪🔙]' | wc -l || true)
+    local char_count=${#text}
+    # Each emoji adds 1 extra character to display width
+    echo $((char_count + emoji_count))
+}
+
 # Global variable for search results
 SEARCH_RESULTS_COUNT=0
 SEARCH_RESULTS_TITLES=()
@@ -1057,7 +1068,7 @@ print_header() {
     clear
     print_color "$BOLD$BLUE" "╔══════════════════════════════════════════════════════════════╗"
     print_color "$BOLD$BLUE" "║                                                              ║"
-    print_color "$BOLD$BLUE" "║           🎓 AWESOME ACADEMIC PROMPTS TOOLKIT 🎓               ║"
+    print_color "$BOLD$BLUE" "║           🎓 AWESOME ACADEMIC PROMPTS TOOLKIT 🎓                 ║"
     print_color "$BOLD$BLUE" "║                                                              ║"
     print_color "$BOLD$BLUE" "║        Your Complete Academic AI Prompt Management           ║"
     print_color "$BOLD$BLUE" "║                     Command Center                           ║"
