@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 # Profile Management Script for Awesome Academic Prompts Toolkit
 # Manages user preferences and settings

@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 # Script to manage Research Areas and Prompt Categories in existing prompt files
 # Shows existing items and allows adding new ones

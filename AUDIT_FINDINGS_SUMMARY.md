@@ -11,7 +11,7 @@
 
 1. **SHEBANG-001: Non-Portable Shebang Path**
    - File: `main.sh:1`
-   - Issue: `#!/opt/homebrew/bin/bash` is macOS-specific
+   - Issue: `#!/usr/bin/env bash` is macOS-specific
    - Fix: Change to `#!/usr/bin/env bash`
    - Impact: Script won't execute directly on Linux systems
 
@@ -106,7 +106,7 @@ main()
 
 ## Key Assumptions About Environment
 
-1. **Bash Availability:** Script assumes POSIX-compatible bash at `/opt/homebrew/bin/bash` (WRONG for Linux)
+1. **Bash Availability:** Script assumes POSIX-compatible bash at `/usr/bin/env bash` (WRONG for Linux)
 2. **TTY Availability:** Script assumes `/dev/tty` exists and is readable
 3. **File Existence:** `Profiles/language_strings.sh` MUST exist and be valid
 4. **Configuration Format:** Profile file uses `key=value` format with no spaces around `=`

@@ -21,11 +21,11 @@ This audit document records findings from a comprehensive static and runtime rev
 **Impact:** Script will not execute in non-macOS environments
 
 ```bash
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 ```
 
 **Problem:** 
-- The shebang points to `/opt/homebrew/bin/bash`, which is a macOS-specific path
+- The shebang points to `/usr/bin/env bash`, which is a macOS-specific path
 - On Linux systems, bash is typically at `/usr/bin/bash` or `/bin/bash`
 - This causes "No such file or directory" when executing `./main.sh` directly
 - The script is marked as executable, but the shebang is broken for portability
@@ -315,7 +315,7 @@ show_welcome() {  # Line 853 - No official recommendation, but seems intentional
 
 **Problem:**
 - All functions use `function_name()` syntax (implicit function declaration)
-- This is valid but `#!/opt/homebrew/bin/bash` requires bash 3+
+- This is valid but `#!/usr/bin/env bash` requires bash 3+
 - More compatible would be: `function_name() { ... }` with braces always on same line
 
 **Root Cause:**

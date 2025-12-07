@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 # Cross-platform CLI tool for adding academic prompts
 # Compatible with Linux, macOS, and Windows (Git Bash/WSL)

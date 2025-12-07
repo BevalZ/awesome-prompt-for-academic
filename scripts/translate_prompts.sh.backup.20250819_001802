@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 # Translation Helper Script for Academic Prompts
 # This script helps maintain consistency across all 12 language versions

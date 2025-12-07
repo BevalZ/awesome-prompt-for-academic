@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 # Language Strings for Interface Localization
 # Supports the top 10 most used languages globally based on prompt availability

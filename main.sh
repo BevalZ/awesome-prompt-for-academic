@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 # Main Menu Script for Awesome Academic Prompts
 # Entry point for all available CLI tools
@@ -26,10 +26,11 @@ source "$SCRIPT_DIR/Profiles/language_strings.sh" 2>/dev/null || true
 # Emojis display as 2 characters but count as 1 in bash
 get_display_width() {
     local text="$1"
-    # Count emoji characters (simplified regex for common emojis)
-    local emoji_count=$(echo "$text" | grep -o '[🎓⚙️🔍📊💾🌐📝🏷️📋📚🚪🔙]' | wc -l || true)
+    # Count emoji characters (common emojis)
+    local emoji_count=$(echo "$text" | grep -o '[🎓⚙️🔍📊💾🌐📝🏷️📋📚🚪🔙]' 2>/dev/null | wc -l)
+    emoji_count=$((emoji_count + 0))  # Ensure it's a number
     local char_count=${#text}
-    # Each emoji adds 1 extra character to display width
+    # Subtract emoji count (they're counted in char_count) and add 2 per emoji for display width
     echo $((char_count + emoji_count))
 }
 
@@ -98,33 +99,50 @@ print_header() {
         empty_line="${empty_line} "
     done
     
-    # Center the text
-    local title_padding=$(( (max_len - title_len) / 2 ))
-    local subtitle_padding=$(( (max_len - subtitle_len) / 2 ))
-    local subtitle2_padding=$(( (max_len - subtitle2_len) / 2 ))
+    # Center the text with proper padding
+    local title_left_pad=$(( (max_len - title_len) / 2 ))
+    local title_right_pad=$(( max_len - title_len - title_left_pad ))
     
-    local title_spaces=""
-    local subtitle_spaces=""
-    local subtitle2_spaces=""
+    local subtitle_left_pad=$(( (max_len - subtitle_len) / 2 ))
+    local subtitle_right_pad=$(( max_len - subtitle_len - subtitle_left_pad ))
     
-    for ((i=0; i<title_padding; i++)); do
-        title_spaces="${title_spaces} "
+    local subtitle2_left_pad=$(( (max_len - subtitle2_len) / 2 ))
+    local subtitle2_right_pad=$(( max_len - subtitle2_len - subtitle2_left_pad ))
+    
+    local title_spaces_left=""
+    local title_spaces_right=""
+    local subtitle_spaces_left=""
+    local subtitle_spaces_right=""
+    local subtitle2_spaces_left=""
+    local subtitle2_spaces_right=""
+    
+    for ((i=0; i<title_left_pad; i++)); do
+        title_spaces_left="${title_spaces_left} "
+    done
+    for ((i=0; i<title_right_pad; i++)); do
+        title_spaces_right="${title_spaces_right} "
     done
     
-    for ((i=0; i<subtitle_padding; i++)); do
-        subtitle_spaces="${subtitle_spaces} "
+    for ((i=0; i<subtitle_left_pad; i++)); do
+        subtitle_spaces_left="${subtitle_spaces_left} "
+    done
+    for ((i=0; i<subtitle_right_pad; i++)); do
+        subtitle_spaces_right="${subtitle_spaces_right} "
     done
     
-    for ((i=0; i<subtitle2_padding; i++)); do
-        subtitle2_spaces="${subtitle2_spaces} "
+    for ((i=0; i<subtitle2_left_pad; i++)); do
+        subtitle2_spaces_left="${subtitle2_spaces_left} "
+    done
+    for ((i=0; i<subtitle2_right_pad; i++)); do
+        subtitle2_spaces_right="${subtitle2_spaces_right} "
     done
     
     print_color "$BOLD$BLUE" "╔${border_line}╗"
     print_color "$BOLD$BLUE" "║${empty_line}║"
-    print_color "$BOLD$BLUE" "║${title_spaces}${title}${title_spaces}║"
+    print_color "$BOLD$BLUE" "║${title_spaces_left}${title}${title_spaces_right}║"
     print_color "$BOLD$BLUE" "║${empty_line}║"
-    print_color "$BOLD$BLUE" "║${subtitle_spaces}${subtitle}${subtitle_spaces}║"
-    print_color "$BOLD$BLUE" "║${subtitle2_spaces}${subtitle2}${subtitle2_spaces}║"
+    print_color "$BOLD$BLUE" "║${subtitle_spaces_left}${subtitle}${subtitle_spaces_right}║"
+    print_color "$BOLD$BLUE" "║${subtitle2_spaces_left}${subtitle2}${subtitle2_spaces_right}║"
     print_color "$BOLD$BLUE" "║${empty_line}║"
     print_color "$BOLD$BLUE" "╚${border_line}╝"
     echo ""

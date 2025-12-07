@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/bash
+#!/usr/bin/env bash
 
 # Simple Prompt Search Tool
 # Search academic prompts by keywords across all categories
