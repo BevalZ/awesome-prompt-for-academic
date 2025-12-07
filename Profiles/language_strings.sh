@@ -264,6 +264,30 @@ get_string() {
                 "CONTINUE_ANYWAY_SHORT") echo "Continue anyway? (y/N):" ;;
                 "ADD_PROMPT_CONFIRM_SHORT") echo "💾 Add this prompt to" ;;
                 "ADD_PROMPT_CONFIRM_SUFFIX_SHORT") echo ".md? (Y/n):" ;;
+                # DeepLX Translation Strings
+                "DEEPLX_TRANSLATION_TITLE") echo "🌍 DeepLX Translation Tool" ;;
+                "DEEPLX_TRANSLATE_PROMPT") echo "🔄 Translate Prompt" ;;
+                "DEEPLX_TRANSLATE_FILE") echo "📄 Translate Full File" ;;
+                "DEEPLX_BATCH_TRANSLATE") echo "📦 Batch Translate Multiple Files" ;;
+                "DEEPLX_API_NOT_CONFIGURED") echo "❌ DeepLX API is not configured. Please set up API key in settings." ;;
+                "DEEPLX_API_KEY_REQUIRED") echo "API key required for DeepLX translation" ;;
+                "DEEPLX_ENTER_API_KEY") echo "Enter DeepLX API key:" ;;
+                "DEEPLX_API_ENDPOINT") echo "DeepLX API endpoint (default: https://api.deeplx.org/translate):" ;;
+                "DEEPLX_TRANSLATION_IN_PROGRESS") echo "🔄 Translation in progress..." ;;
+                "DEEPLX_TRANSLATION_COMPLETE") echo "✅ Translation completed successfully!" ;;
+                "DEEPLX_TRANSLATION_FAILED") echo "❌ Translation failed:" ;;
+                "DEEPLX_SELECT_SOURCE_LANGUAGE") echo "Select source language:" ;;
+                "DEEPLX_SELECT_TARGET_LANGUAGES") echo "Select target language(s) (comma-separated):" ;;
+                "DEEPLX_TRANSLATING") echo "Translating..." ;;
+                "DEEPLX_PRESERVING_FORMAT") echo "Preserving markdown formatting..." ;;
+                "DEEPLX_API_ERROR") echo "API Error:" ;;
+                "DEEPLX_TIMEOUT_ERROR") echo "Request timeout. Please try again." ;;
+                "DEEPLX_AUTH_ERROR") echo "Authentication failed. Please check your API key." ;;
+                "DEEPLX_RATE_LIMIT") echo "Rate limit exceeded. Please wait before retrying." ;;
+                "DEEPLX_RETRY_COUNT") echo "Retrying..." ;;
+                "DEEPLX_ENABLE_API") echo "Enable DeepLX API:" ;;
+                "DEEPLX_ENABLE_AUTO_TRANSLATE") echo "Enable auto-translation:" ;;
+                "DEEPLX_CONFIG_SAVED") echo "✅ DeepLX configuration saved successfully." ;;
                 *) echo "$key" ;;
             esac
             ;;
@@ -525,6 +549,30 @@ get_string() {
                 "CONTINUE_ANYWAY_SHORT") echo "继续吗？(y/N)：" ;;
                 "ADD_PROMPT_CONFIRM_SHORT") echo "💾 将此提示添加到" ;;
                 "ADD_PROMPT_CONFIRM_SUFFIX_SHORT") echo ".md？(Y/n)：" ;;
+                # DeepLX Translation Strings
+                "DEEPLX_TRANSLATION_TITLE") echo "🌍 DeepLX翻译工具" ;;
+                "DEEPLX_TRANSLATE_PROMPT") echo "🔄 翻译提示" ;;
+                "DEEPLX_TRANSLATE_FILE") echo "📄 翻译完整文件" ;;
+                "DEEPLX_BATCH_TRANSLATE") echo "📦 批量翻译多个文件" ;;
+                "DEEPLX_API_NOT_CONFIGURED") echo "❌ DeepLX API未配置。请在设置中设置API密钥。" ;;
+                "DEEPLX_API_KEY_REQUIRED") echo "DeepLX翻译需要API密钥" ;;
+                "DEEPLX_ENTER_API_KEY") echo "输入DeepLX API密钥：" ;;
+                "DEEPLX_API_ENDPOINT") echo "DeepLX API端点（默认：https://api.deeplx.org/translate）：" ;;
+                "DEEPLX_TRANSLATION_IN_PROGRESS") echo "🔄 翻译进行中..." ;;
+                "DEEPLX_TRANSLATION_COMPLETE") echo "✅ 翻译完成！" ;;
+                "DEEPLX_TRANSLATION_FAILED") echo "❌ 翻译失败：" ;;
+                "DEEPLX_SELECT_SOURCE_LANGUAGE") echo "选择源语言：" ;;
+                "DEEPLX_SELECT_TARGET_LANGUAGES") echo "选择目标语言（逗号分隔）：" ;;
+                "DEEPLX_TRANSLATING") echo "翻译中..." ;;
+                "DEEPLX_PRESERVING_FORMAT") echo "保留Markdown格式..." ;;
+                "DEEPLX_API_ERROR") echo "API错误：" ;;
+                "DEEPLX_TIMEOUT_ERROR") echo "请求超时。请重试。" ;;
+                "DEEPLX_AUTH_ERROR") echo "身份验证失败。请检查您的API密钥。" ;;
+                "DEEPLX_RATE_LIMIT") echo "速率限制已超出。请等待后重试。" ;;
+                "DEEPLX_RETRY_COUNT") echo "重试中..." ;;
+                "DEEPLX_ENABLE_API") echo "启用DeepLX API：" ;;
+                "DEEPLX_ENABLE_AUTO_TRANSLATE") echo "启用自动翻译：" ;;
+                "DEEPLX_CONFIG_SAVED") echo "✅ DeepLX配置已成功保存。" ;;
                 *) echo "$key" ;;
             esac
             ;;
